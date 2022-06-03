@@ -59,23 +59,36 @@
     <script>
       const form = document.querySelector("form");
       const tbodyEl = document.querySelector("tbody");
+      const tableEl = document.querySelector("table");
       function eventChecker(e) {
         e.preventDefault();
         const datalistt = document.getElementById("gettypes").value;
         const name = document.getElementById("name").value;
         const dates = document.getElementById("dates").value;
         const amount = document.getElementById("amount").value;
+
         tbodyEl.innerHTML += `
         <tr>
         <td>${datalistt}</td>  
         <td>${name}</td>  
         <td>${dates}</td>
-        <td>${'$' + amount}</td>
-        <td><button class="deleteBtn">Delete</button></td>
+        <td>${"$" + amount}</td>
+        <td><button class="deleteBtn">X</button></td>
         </tr>
          `;
       }
+
+      function deleteItem(e) {
+        if (!e.target.classList.contains("deleteBtn")) {
+          return;
+        }
+
+        const btn = e.target;
+        btn.closest("tr").remove();
+      }
+
       form.addEventListener("submit", eventChecker);
+      tableEl.addEventListener("click", deleteItem);
 
       function getData() {}
     </script>
