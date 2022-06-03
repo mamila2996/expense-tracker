@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Tracker App</title>
-    <link rel="stylesheet" href="index.css">
-</head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<body>
+  <body>
     <div class="parent">
-        <div class="container">
-            <h1 id="header1">Expense Tracker</h1>
-            <h3 id="header2">Add A New Item:</h3>
-            <div class="forinputs">
-                <form action="">
-                    <label for=""> Type: </label><input list="types" id="Type">
-                    <datalist id="types">
-                        <option value="Debit Card">
-                        <option value="Master Card">
-                        <option value="Visa">
-                        <option value="PayPal">
-                    </datalist>
-                    <label for=""> Name: </label><input type="text" placeholder="please fill the information"><br><br>
-                    <label for="">Date: </label><input type="date">
-                    <label for="">Amount: </label><input type="number"><br><br>
-                        <button onclick="getData()">Add Expense</button><br><br>
-                </form>
-                <div class="fortable">
-                    <table>
-                        <tr>
-                            <th>Type</th>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Amaount</th>
-                            <th id="close">close</th>
-                        </tr>
-                        <tr id="lightblack">
-                            <td>Debit Card</td>
-                            <td>Mame</td>
-                            <td>Date</td>
-                            <td>$120</td>
-                            <td>sign</td>
-                        </tr>
-                    </table>
-                </div>
+      <div class="container">
+        <h1 id="header1">Expense Tracker</h1>
+        <h3 id="header2">Add A New Item:</h3>
+        <div class="forinputs">
+          <form>
+            <label for=""> Type: </label>
+            <input type="text" list="types" id="gettypes" />
+            <datalist id="types">
+              <option value="Debit Card">Debit Card</option>
+              <option value="Master Card">Master Card</option>
+              <option value="Visa">Visa</option>
+              <option value="PayPal">PayPal</option>
+              <option value="Cash">Cash</option>
+            </datalist>
 
-            </div>
+            <label for=""> Name: </label>
+            <input
+              id="name"
+              type="text"
+              placeholder="please fill the information"
+            /><br /><br />
+            <label for="">Date: </label>
+            <input id="dates" type="date" />
+            <label for="">Amount: </label>
+            <input id="amount" type="number" /><br /><br />
+            <button>Add Expense</button><br /><br />
+          </form>
+          <div class="fortable">
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Name</th>
+                  <th>Date</th>
+                  <th>Amaount</th>
+                  <th id="close">close</th>
+                </tr>
+              </thead>
 
-
-
-
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
-
-
-
+      </div>
     </div>
 
+    <script>
+      const form = document.querySelector("form");
+      const tbodyEl = document.querySelector("tbody");
+      function eventChecker(e) {
+        e.preventDefault();
+        const datalistt = document.getElementById("gettypes").value;
+        const name = document.getElementById("name").value;
+        const dates = document.getElementById("dates").value;
+        const amount = document.getElementById("amount").value;
+        tbodyEl.innerHTML += `
+        <tr>
+        <td>${datalistt}</td>  
+        <td>${name}</td>  
+        <td>${dates}</td>
+        <td>${'$' + amount}</td>
+        <td><button class="deleteBtn">Delete</button></td>
+        </tr>
+         `;
+      }
+      form.addEventListener("submit", eventChecker);
 
-    <script src="index.js">
-        function getData() {
-            document.getElementById('')
-        }
-
-
+      function getData() {}
     </script>
-</body>
-
+  </body>
 </html>
