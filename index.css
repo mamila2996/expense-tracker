@@ -1,0 +1,61 @@
+.container {
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+
+}
+
+h1,
+h3 {
+    text-align: center;
+    font-family: arial, sans-serif;
+}
+
+#header2 {
+    color: #4CAF50;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 75px;
+    text-align: left;
+}
+
+#close {
+    color: black;
+}
+
+#lightblack {
+    background-color: rgb(29, 28, 28);
+}
+
+button {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    font-family: arial, sans-serif;
+    font-size: 17px;
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input {
+    width: 42%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+
+}
+
+label {
+    font-family: arial, sans-serif;
+    font-weight: bold;
+}
