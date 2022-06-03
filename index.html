@@ -16,8 +16,8 @@
         <div class="forinputs">
           <form>
             <label for=""> Type: </label>
-            <input type="text" list="types" id="gettypes" />
-            <datalist id="types">
+            <input type="text" list="types" id="gettypes" required />
+            <datalist id="types" >
               <option value="Debit Card">Debit Card</option>
               <option value="Master Card">Master Card</option>
               <option value="Visa">Visa</option>
@@ -26,15 +26,11 @@
             </datalist>
 
             <label for=""> Name: </label>
-            <input
-              id="name"
-              type="text"
-              placeholder="please fill the information"
-            /><br /><br />
+            <input id="name" type="text" required /><br /><br />
             <label for="">Date: </label>
-            <input id="dates" type="date" />
+            <input id="dates" type="date" required/>
             <label for="">Amount: </label>
-            <input id="amount" type="number" /><br /><br />
+            <input id="amount" type="number" required/><br /><br />
             <button>Add Expense</button><br /><br />
           </form>
           <div class="fortable">
